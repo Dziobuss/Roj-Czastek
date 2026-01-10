@@ -2,8 +2,8 @@
 #include <stdio.h>
 #include <time.h>
 #include "generator_map.h"
-#define ILOSCSYGNALOW 10
-#define RADIUS 3
+#define ILOSCSYGNALOW 2
+#define RADIUS 2
 int main(int argc, char ** argv) {
     if (argc != 3) {
         fprintf(stderr, "BŁĄD: Nieodpowiednia liczba argumentów!\nUżycie: %s <szerokość> <wysokość>\n", argv[0]);
