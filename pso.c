@@ -113,14 +113,3 @@ void free_swarm(Swarm *swarm) {
         free(swarm);
     }
 }
-
-// funkcja czyszczenia mapy
-void free_loaded_map(double **map) {
-    if (!map) return;
-    int height = (int)map[0][1];
-    // zwalnianie miejsca
-    for (int i = 0; i <= height; i++) {
-        free(map[i]);
-    }
-    free(map);
-}

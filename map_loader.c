@@ -27,5 +27,15 @@ double **load_map_from_file(char *m){
             i = 0;
         }
     }
+    fclose(f);
     return mapa;
+}
+// przenioslem tu zeby byl porzadek
+void free_loaded_map(double **map) {
+    if (!map) return;
+    int height = (int)map[0][1];
+    for (int i = 0; i <= height; i++) {
+        free(map[i]);
+    }
+    free(map);
 }

@@ -28,6 +28,6 @@ typedef struct {
 Swarm* init_swarm(int count, double **map);
 void update_swarm(Swarm *swarm, double **map, PSOConfig config);
 void free_swarm(Swarm *swarm);
-void free_loaded_map(double **map);
+ //void free_loaded_map(double **map); w maploaderze
 
 #endif
