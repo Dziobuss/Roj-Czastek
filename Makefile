@@ -2,6 +2,7 @@ CC = gcc
 CFLAGS = -Wall -Wextra -g
 
 TARGET = pso
+// dodanie plikow dod listy pliow zrodlowych
 SRCS = main.c map_loader.c pso.c utils.c Logger.c
 GENE = generatormap/generator_map.c generatormap/generator_map.h generatormap/main_generatora.c
 
