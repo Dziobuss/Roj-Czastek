@@ -24,12 +24,13 @@ int main(int argc, char ** argv) {
         return EXIT_FAILURE;
     }
     double curr = -100, maks = -100;
-    for (int i = 0; i < ILOSCSYGNALOW; i++) {
+    for (int i = 0; i < ILOSCSYGNALOW-1; i++) {
         curr = 15.0 + (double)rand() / RAND_MAX * 40.0;
         while (maks == curr) curr = 15.0 + (double)rand() / RAND_MAX * 40.0;
         if (maks < curr) maks = curr;
         map_add_signal(mapa, curr, RADIUS);
     }
+    map_add_signal(mapa, 60.0, RADIUS);
     if (map_print_to_file(mapa, "mapa.txt") == 0) {
         printf("Sukces: Mapa zapisana do 'mapa.txt'.\n");
     } else {

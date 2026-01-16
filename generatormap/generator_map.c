@@ -43,7 +43,7 @@ int map_print_to_file(double **mapa, const char *plik){
         return -1;
     }
     int height = ((int*)mapa[0])[1];
-    int width = ((int*)mapa[0])[1];
+    int width = ((int*)mapa[0])[0];
     fprintf(f,"%d %d\n",width, height);
     for (int i = 1;i<height+1;i++){
         for(int j = 0;j<width;j++){
