@@ -6,6 +6,7 @@
 #include "pso.h"
 #include "logger.h"
 #include "utils.h"
+#include "grafika.h"
 
 void load_config(const char *filename, PSOConfig *cfg) {
     FILE *f = fopen(filename, "r");
@@ -47,9 +48,29 @@ int main(int argc, char **argv){
     }
     // domyslne parametry algorytmu: bezwladnosc, pamiec wlasna, wiedza roju
     PSOConfig config = {0.5, 1.0, 1.0};
-
+    // TWORZENIE MAPY!!
+    int okn_x = 600;
+    int okn_y = 600;
+    SDL_Window *okno = SDL_CreateWindow("Mapa", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, okn_x, okn_y, 0);
+    SDL_Renderer *renderer = SDL_CreateRenderer(okno, -1, SDL_RENDERER_ACCELERATED);
+    //GLOWNA PETLA
+    int running = 1;
+    SDL_Event e;
+    while(running){
+        while (SDL_PollEvent(&e)) {
+            if (e.type == SDL_QUIT) {
+                running = 0;
+            }
+        }
+        SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
+        SDL_RenderClear(renderer); // czyszczenie rendera
+        wyswietl_mape(renderer, mapa, okn_x, okn_y, maks_z_mapy(mapa)); //wyswietlanie mapy
+        SDL_RenderPresent(renderer); //wyswietlanie utworzonej klatki
+        SDL_Delay(16); //spowolnienie do 60fps
+    }
     
     if (config_file) load_config(config_file, &config);
+    
 
     //inicjalizacja roju
     Swarm *swarm = init_swarm(particles_count, mapa);

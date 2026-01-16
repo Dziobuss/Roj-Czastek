@@ -30,6 +30,19 @@ double **load_map_from_file(char *m){
     fclose(f);
     return mapa;
 }
+double maks_z_mapy(double **mapa){ //potrzebne do generacji wizualnej
+    int width = mapa[0][0];
+    int height = mapa[0][1];
+    double maks = -100.;
+    for (int i =1;i<=height;i++){
+        for(int j = 0;j<width;j++){
+            if(mapa[i][j]>maks){
+                maks = mapa[i][j];
+            }
+        }
+    }
+    return maks;
+}
 // przenioslem tu zeby byl porzadek
 void free_loaded_map(double **map) {
     if (!map) return;

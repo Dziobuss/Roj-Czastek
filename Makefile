@@ -2,11 +2,11 @@ CC = gcc
 CFLAGS = -Wall -Wextra -g
 
 TARGET = pso
-SRCS = main.c map_loader.c pso.c utils.c logger.c
+SRCS = main.c map_loader.c pso.c utils.c logger.c grafika.c
 GENE = generatormap/generator_map.c generatormap/generator_map.h generatormap/main_generatora.c
 
 all: $(SRCS)
-	$(CC) $(CFLAGS) $(SRCS) -o $(TARGET) -lm
+	$(CC) $(CFLAGS) $(SRCS) -o $(TARGET) -lSDL2 -lm
 
 generator: $(GENE)
 	$(CC) $(CFLAGS) $(GENE) -o generator -lm

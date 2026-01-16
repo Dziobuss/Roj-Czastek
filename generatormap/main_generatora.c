@@ -2,13 +2,15 @@
 #include <stdio.h>
 #include <time.h>
 #include "generator_map.h"
-#define ILOSCSYGNALOW 2
-#define RADIUS 2
+//#define ILOSCSYGNALOW 2
+//#define RADIUS 2
 int main(int argc, char ** argv) {
-    if (argc != 3) {
-        fprintf(stderr, "BŁĄD: Nieodpowiednia liczba argumentów!\nUżycie: %s <szerokość> <wysokość>\n", argv[0]);
+    if (argc != 5) {
+        fprintf(stderr, "BŁĄD: Nieodpowiednia liczba argumentów!\nUżycie: %s <szerokość> <wysokość> <ilosc_sygnalow> <zasieg>\n", argv[0]);
         return EXIT_FAILURE;
     }
+    int RADIUS = atoi(argv[4]);
+    int ILOSCSYGNALOW = atoi(argv[3]);
     int width = atoi(argv[1]);
     int height = atoi(argv[2]);
     if (width <= 0 || height <= 0) {
