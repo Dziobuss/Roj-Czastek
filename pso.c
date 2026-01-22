@@ -84,8 +84,8 @@ void update_swarm(Swarm *swarm, double **map, PSOConfig config) {
               + config.c2 * r2 * (swarm->gBest_y - p->y);
 
         // aktualizowanie aktualnej pozycji
-        p->x += p->vx;
-        p->y += p->vy;
+        p->x += p->vx*0.2;
+        p->y += p->vy*0.2;
 
         // ocena zaaktualizowanego miejsca
         double current_fitness = get_map_value_internal(map, p->x, p->y);

@@ -6,7 +6,7 @@ SRCS = main.c map_loader.c pso.c utils.c logger.c grafika.c
 GENE = generatormap/generator_map.c generatormap/generator_map.h generatormap/main_generatora.c
 
 all: $(SRCS)
-	$(CC) $(CFLAGS) $(SRCS) -o $(TARGET) -lSDL2 -lm
+	$(CC) $(CFLAGS) $(SRCS) -o $(TARGET) -lSDL2 -lSDL2_ttf -lm
 
 generator: $(GENE)
 	$(CC) $(CFLAGS) $(GENE) -o generator -lm

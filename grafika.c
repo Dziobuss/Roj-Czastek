@@ -85,7 +85,7 @@ SDL_Texture* stworz_teksture_mapy(SDL_Renderer *renderer, double **mapa, int map
 
     // 3. Rysujemy trójkąt bezpośrednio NA TEKSTURZE
     if (max_i != -1) {
-        int rozmiar_trojkata = map_w / 40; // Skalujemy rozmiar trójkąta do wielkości mapy
+        int rozmiar_trojkata = map_w / 70; // Skalujemy rozmiar trójkąta do wielkości mapy
         if (rozmiar_trojkata < 3) rozmiar_trojkata = 3;
 
         SDL_SetRenderDrawColor(renderer, 222, 87, 2, 255); // Pomarańczowy
