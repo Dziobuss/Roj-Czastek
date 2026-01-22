@@ -66,7 +66,7 @@ int main(int argc, char ** argv) {
     }
 
     if (debug_mode) printf("DEBUG: Dodawanie sygnału końcowego: wartość 60.0, zasięg %d.\n", RADIUS);
-    map_add_signal(mapa, 60.0, RADIUS);
+    map_add_signal(mapa, 75.0, RADIUS*0.7);
 
     if (debug_mode) printf("DEBUG: Zapisywanie mapy do pliku '%s'.\n", filename);
     if (map_print_to_file(mapa, filename) != 0) {

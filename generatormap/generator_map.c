@@ -49,7 +49,7 @@ void map_add_signal(double **mapa, double signal, int radius) {
                 double distance = sqrt(dx*dx + dy*dy);
                 if (distance <= radius) {
                     double attenuation = 1.0 - (distance / (double)radius);
-                    double fluctuation = 0.8 + ((rand() % 41) / 100.0); 
+                    double fluctuation = 0.7 + ((rand() % 31) / 100.0); 
                     double final_signal = signal * attenuation * fluctuation;
                     mapa[currentY + 1][currentX] = (final_signal > mapa[currentY+1][currentX]) ? final_signal : mapa[currentY+1][currentX];
                 }
